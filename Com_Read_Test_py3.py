@@ -46,7 +46,8 @@ def cover_fenzuma(str):
 
 #转换昵称
 def cover_nicheng(str):
-    pass
+    nicheng_org = str[22:52]
+
 
 #获取目标地址(获取没任何意思)
 def cover_mubiao_dizhi(str):
