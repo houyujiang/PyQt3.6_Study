@@ -25,7 +25,7 @@ def com_factory():
     #print ('读取到的字符长度：',len)
     str = com.read(40)
     str = str.hex()
-    #print('读取到的结果',str)
+    print('读取到的结果',str)
     return str
 
 #分解成两两一组的16进制字符
@@ -47,6 +47,10 @@ def cover_fenzuma(str):
 #转换昵称
 def cover_nicheng(str):
     nicheng_org = str[22:52]
+    print(nicheng_org)
+    str = ''.join([chr(int(b, 16)) for b in [nicheng_org[i:i + 2] for i in range(0, len(nicheng_org), 2)]])
+    utf8 = str.encode('utf-8')
+    return utf8
 
 
 #获取目标地址(获取没任何意思)
@@ -98,6 +102,7 @@ if __name__ == '__main__':
         north = cover_weidu(com_str)
         haiba = cover_haiba(com_str)
         mubiao = cover_mubiao_dizhi(com_str)
+        nicheng_str = cover_nicheng(com_str)
         print ('分解：',fenjie_str)
         print('id：',id)
         print('分组码：',fenzuma)
@@ -105,3 +110,4 @@ if __name__ == '__main__':
         print('维度',north)
         print('海拔高度',haiba)
         print('目标地址：',mubiao)
+        print('昵称：', nicheng_str)
