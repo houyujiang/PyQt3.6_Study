@@ -40,8 +40,10 @@ def cover_fenzuma(str):
     fenzuma_orginal = str[18:22]  # 截取id
     fenzuma_cover = int(fenzuma_orginal, 16)
     return fenzuma_cover
+#转换昵称
 def cover_nicheng(str):
     pass
+#获取目标地址
 def cover_mubiao_dizhi(str):
     pass
 #转换经度坐标
@@ -70,6 +72,7 @@ def cover_haiba(str):
     haiba_num = int(haiba_str,16)
     haiba_height = haiba_num/float(10)
     return haiba_height
+#读取设备状态
 def cover_state(str):
     pass
 
